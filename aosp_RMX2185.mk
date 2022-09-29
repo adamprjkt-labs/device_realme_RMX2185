@@ -23,26 +23,13 @@ $(call inherit-product, device/realme/RMX2185/device.mk)
 
 # Inherit some common stuff.
 TARGET_BOOT_ANIMATION_RES := 720
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_RMX2185
+PRODUCT_NAME := aosp_RMX2185
 PRODUCT_DEVICE := RMX2185
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme G35 Series
 PRODUCT_MANUFACTURER := realme
 
-# Build info
-BUILD_FINGERPRINT := "realme/RMX2185/RMX2185:10/QP1A.190711.020/1632377790:user/release-keys"
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=RMX2185 \
-    PRODUCT_NAME=RMX2185 \
-    PRIVATE_BUILD_DESC="full_oppo6765-user 10 QP1A.190711.020 bedd37e98646d3a1 release-keys"
-
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
-
-# Time
-LINEAGE_VERSION_APPEND_TIME_OF_DAY := true
